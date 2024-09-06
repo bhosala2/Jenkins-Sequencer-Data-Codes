@@ -1,0 +1,274 @@
+pipeline {
+    agent { label "master" }
+    stages {
+        stage("Initiate Hiseq") {
+            steps {
+                sshagent(['dd5bdc68-0e6c-4b17-8044-94e9d02e52e9']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l seqinstrument diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/illumina_hiseq /gpfs/sc1/raw/illumina/hiseq http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Pipeline hiseq"
+                    }
+                }
+            }
+        }
+        stage("Initiate Nextseq") {
+            steps {
+                sshagent(['dd5bdc68-0e6c-4b17-8044-94e9d02e52e9']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l seqinstrument diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/illumina_nextseq /gpfs/sc1/raw/illumina/nextseq http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Pipeline nextseq"
+                    }
+                }
+            }
+        }
+       stage("Initiate Novaseq") {
+            steps {
+                sshagent(['dd5bdc68-0e6c-4b17-8044-94e9d02e52e9']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l seqinstrument diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/illumina_novaseq /gpfs/sc1/raw/illumina/novaseq http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Pipeline novaseq"
+                    }
+                }
+            }
+        }
+       stage("Initiate iSeq100") {
+            steps {
+                sshagent(['dd5bdc68-0e6c-4b17-8044-94e9d02e52e9']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l seqinstrument diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare_iseq100.sh /gpfs/remote/ple/raw/illumina_iseq100/FS10000433 /gpfs/sc1/raw/illumina/iseq100/FS10000433 http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Pipeline iSeq100"
+                    }
+                }
+            }
+        }
+        stage("Initiate Miseq_M01947") {
+            steps {
+                sshagent(['dd5bdc68-0e6c-4b17-8044-94e9d02e52e9']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l seqinstrument diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/illumina_miseq/M01947 /gpfs/sc1/raw/illumina/miseq/M01947 http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Pipeline miseq"
+                    }
+                }
+            }
+        }
+        stage("Initiate Miseq_M00206") {
+            steps {
+                sshagent(['dd5bdc68-0e6c-4b17-8044-94e9d02e52e9']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l seqinstrument diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/illumina_miseq/M00206 /gpfs/sc1/raw/illumina/miseq/M00206 http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Pipeline miseq"
+                    }
+                }
+            }
+        }
+       stage("Initiate Miseq_M02091") {
+            steps {
+                sshagent(['dd5bdc68-0e6c-4b17-8044-94e9d02e52e9']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l seqinstrument diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/illumina_miseq/M02091 /gpfs/sc1/raw/illumina/miseq/M02091 http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Pipeline miseq"
+                    }
+                }
+            }
+        }
+       stage("Initiate Miseq_M02550") {
+            steps {
+                sshagent(['dd5bdc68-0e6c-4b17-8044-94e9d02e52e9']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l seqinstrument diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/illumina_miseq/M02550 /gpfs/sc1/raw/illumina/miseq/M02550 http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Pipeline miseq"
+                    }
+                }
+            }
+        }
+       stage("Initiate Miseq_M04442") {
+            steps {
+                sshagent(['dd5bdc68-0e6c-4b17-8044-94e9d02e52e9']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l seqinstrument diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/illumina_miseq/M04442 /gpfs/sc1/raw/illumina/miseq/M04442 http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Pipeline miseq"
+                    }
+                }
+            }
+        }
+       stage("Initiate Miseq_M03527") {
+            steps {
+                sshagent(['dd5bdc68-0e6c-4b17-8044-94e9d02e52e9']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l seqinstrument diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/illumina_miseq/Miseq_M03527 /gpfs/sc1/raw/illumina/miseq/Miseq_M03527 http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Pipeline miseq"
+                    }
+                }
+            }
+        }
+       stage("Initiate Miseq_M05108") {
+            steps {
+                sshagent(['dd5bdc68-0e6c-4b17-8044-94e9d02e52e9']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l seqinstrument diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/illumina_miseq/Miseq_M05108 /gpfs/sc1/raw/illumina/miseq/Miseq_M05108 http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Pipeline miseq"
+                    }
+                }
+            }
+        }
+       stage("Initiate M05137") {
+            steps {
+                sshagent(['dd5bdc68-0e6c-4b17-8044-94e9d02e52e9']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l seqinstrument diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/illumina_miseq/M05137 /gpfs/sc1/raw/illumina/miseq/M05137 http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Pipeline miseq"
+                    }
+                }
+            }
+        }
+        stage("Initiate M01947") {
+            steps {
+                sshagent(['dd5bdc68-0e6c-4b17-8044-94e9d02e52e9']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l seqinstrument diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/illumina_miseq/M01947 /gpfs/sc1/raw/illumina/miseq/M01947 http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Pipeline miseq"
+                    }
+                }
+            }
+        }
+        stage("Initiate G400") {
+            steps {
+                sshagent(['dd5bdc68-0e6c-4b17-8044-94e9d02e52e9']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l seqinstrument diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare_mgi_g400.sh /gpfs/remote/ple/raw/mgi_g400 /gpfs/sc1/raw/mgi/g400 http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Pipeline g400"
+                    }
+                }
+            }
+        }
+        stage("Initiate Clinical FFPET Plasma Concordance") {
+            steps {
+                sshagent(['a5656286-0043-4942-a7cc-d9a4d4a7c087']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l datasync diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/clinical_raw/ffpet_plasma_concordance /gpfs/sc1groups/msa/clinical/FFPET_plasma_concordance/RAW http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Clinical_Pipeline clinical_ffpet_plasma_concordance"
+                    }
+                }
+            }
+        }
+        stage("Initiate Clinical FFPET Method Concordance") {
+            steps {
+                sshagent(['a5656286-0043-4942-a7cc-d9a4d4a7c087']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l datasync diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/clinical_raw/ffpet_method_concordance /gpfs/sc1groups/msa/clinical/FFPET_method_concordance/RAW http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Clinical_Pipeline clinical_ffpet_method_concordance"
+                    }
+                }
+            }
+        }
+        stage("Initiate Clinical LCMM") {
+            steps {
+                sshagent(['a5656286-0043-4942-a7cc-d9a4d4a7c087']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l datasync diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/clinical_raw/lcmm /gpfs/sc1groups/msa/clinical/LCMM/RAW http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Clinical_Pipeline clinical_lcmm"
+                    }
+                }
+            }
+        }
+        stage("Initiate Clinical OAK") {
+            steps {
+                sshagent(['a5656286-0043-4942-a7cc-d9a4d4a7c087']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l datasync diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/clinical_raw/oak /gpfs/sc1groups/msa/clinical/OAK/RAW http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Clinical_Pipeline clinical_oak"
+                    }
+                }
+            }
+        }
+        stage("Initiate SDX_CRC_SURV") {
+            steps {
+                sshagent(['a5656286-0043-4942-a7cc-d9a4d4a7c087']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l datasync diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/clinical_raw/sdx_crc_surv /gpfs/sc1groups/msa/clinical/sdx_crc_surv/RAW http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Clinical_Pipeline clinical_sdx_crc_surv"
+                    }
+                }
+            }
+        }
+        stage("Initiate heme") {
+            steps {
+                sshagent(['a5656286-0043-4942-a7cc-d9a4d4a7c087']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l datasync diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/clinical_raw/heme /gpfs/sc1groups/dev-clinical/heme/raw/hiseq http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Clinical_Pipeline clinical_heme_hiseq"
+                    }
+                }
+            }
+        }
+        stage("Initiate nextseq_dx") {
+            steps {
+                sshagent(['a5656286-0043-4942-a7cc-d9a4d4a7c087']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l datasync diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/clinical_raw/heme/nextseq_dx /gpfs/sc1groups/dev-clinical/heme/raw/nextseq_dx http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Clinical_Pipeline clinical_heme_nextseq_dx"
+                    }
+                }
+            }
+        }
+        stage("Initiate heme_novaseq") {
+            steps {
+                sshagent(['a5656286-0043-4942-a7cc-d9a4d4a7c087']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l datasync diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/clinical_raw/heme_novaseq /gpfs/sc1groups/dev-clinical/heme/raw/novaseq http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Clinical_Pipeline clinical_heme_novaseq"
+                    }
+                }
+            }
+        }
+        stage("Initiate Ipsos") {
+            steps {
+                sshagent(['a5656286-0043-4942-a7cc-d9a4d4a7c087']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l datasync diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/clinical_raw/ipsos /gpfs/sc1groups/dev-clinical/ipsos/raw http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Clinical_Pipeline clinical_ipsos"
+                    }
+                }
+            }
+        }
+        stage("Initiate res_pharma_heme") {
+            steps {
+                sshagent(['a5656286-0043-4942-a7cc-d9a4d4a7c087']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l datasync diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/clinical_raw/res_pharma/heme/raw /gpfs/sc1groups/res_pharma/heme/raw http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Clinical_Pipeline res_pharma_heme"
+                    }
+                }
+            }
+        }
+        stage("Initiate res_pharma_ipsos") {
+            steps {
+                sshagent(['a5656286-0043-4942-a7cc-d9a4d4a7c087']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l datasync diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/clinical_raw/res_pharma/ipsos/raw /gpfs/sc1groups/res_pharma/ipsos/raw http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Clinical_Pipeline res_pharma_ipsos"
+                    }
+                }
+            }
+        }
+        stage("Initiate RSC Nextseq") {
+            steps {
+                sshagent(['dd5bdc68-0e6c-4b17-8044-94e9d02e52e9']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l seqinstrument diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/rsc/raw/illumina_nextseq /gpfs/sc1/raw/illumina/nextseq http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Pipeline nextseq"
+                    }
+                }
+            }
+        }
+        stage("Initiate RSC Novaseq") {
+            steps {
+                sshagent(['dd5bdc68-0e6c-4b17-8044-94e9d02e52e9']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l seqinstrument diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/rsc/raw/illumina_novaseq /gpfs/sc1/raw/illumina/novaseq http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Pipeline novaseq"
+                    }
+                }
+            }
+        }
+        stage("Initiate RSC miseq_M02493") {
+            steps {
+                sshagent(['dd5bdc68-0e6c-4b17-8044-94e9d02e52e9']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l seqinstrument diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/rsc/raw/illumina_miseq/M02493 /gpfs/sc1/raw/illumina/miseq/M02493 http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Pipeline miseq"
+                    }
+                }
+            }
+        }
+        stage("Initiate basespace-novaseq") {
+            steps {
+                sshagent(['dd5bdc68-0e6c-4b17-8044-94e9d02e52e9']) {
+                    script {
+                        sh "ssh -o StrictHostKeyChecking=no -l seqinstrument diagw01 /gpfs/sc1groups/seqit/share/bin/dir_compare.sh /gpfs/remote/ple/raw/illumina_basespace/Basespace/Novaseq /gpfs/sc1/raw/illumina/basespace/Novaseq http://sc1jenkins01.eth.rsshpc1.sc1.science.roche.com:8080/job/Sequencing%20IT/view/Sequencer_Synchronization/job/Sequencer_Pipeline_basespace basespace-novaseq"
+                    }
+                }
+            }
+        }
+    }
+    post {
+         success {
+             echo 'Run Successful'
+         }
+         failure {
+             mail bcc: '', body: "Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "Sequencer Synchronization Build Failure ${env.JOB_NAME}", to: "rpbseqit_team@msxdl.roche.com";
+         }
+     }
+}
